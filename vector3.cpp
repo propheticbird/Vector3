@@ -37,6 +37,28 @@ double Vector3::getLength() const
     return pow( sum, 0.5 );
 }
 
+void Vector3::normalize(Directions eDirections)
+{
+    switch(eDirections)
+    {
+        case X_AXIS:
+            m_x = 1;
+            m_y = m_z = 0;
+            break;
+        case Y_AXIS:
+            m_y = 1;
+            m_x = m_z = 0;
+            break;
+        case Z_AXIS:
+            m_z = 1;
+            m_x = m_y = 0;
+            break;
+        default:
+            m_x = m_y = m_z = 0;
+            break;
+    }
+}
+
 Vector3 Vector3::operator+ (const Vector3& rhs)
 { 
     // a + b = c(ax + bx, ay + by, az + bz)
@@ -64,3 +86,8 @@ double Vector3::getZ() const
     return m_z;
 }
 
+std::ostream& operator<< (std::ostream& out, const Vector3& rhs)
+{
+    out << "X: " << rhs.m_x << " " << "Y: " << rhs.m_y << " " << "Z: " << rhs.m_z;
+    return out;
+}

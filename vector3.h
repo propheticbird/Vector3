@@ -6,18 +6,27 @@
 class Vector3
 {
 
+    friend std::ostream& operator<< (std::ostream&, const Vector3&);
+
 public:
 
-    //constructors
+    enum Directions
+    {
+        X_AXIS,
+        Y_AXIS,
+        Z_AXIS
+    };
+
     Vector3 (double=0.0, double=0.0, double=0.0);
     Vector3 (const Vector3&);
 
-    // overloaded operators
     Vector3 operator+ (const Vector3&);
     int operator* (const Vector3&);
     Vector3& operator= (const Vector3&);
 
-    // methods
+    // make the vector unit(it's length = 1)
+    void normalize(Directions eDirections);
+
     double getLength() const;
     double getX() const;
     double getY() const;

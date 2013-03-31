@@ -15,6 +15,10 @@ int main()
     Vector3 v2;
     v2 = v1 + v;
     cout << v2.getX() << v2.getY() << v2.getZ() << endl;
+    cout << v2 << endl;
+
+    v2.normalize(Vector3::X_AXIS);
+    cout << v2 << endl;
 
     return 0;
 }
