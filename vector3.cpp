@@ -37,26 +37,12 @@ double Vector3::getLength() const
     return pow( sum, 0.5 );
 }
 
-void Vector3::normalize(Directions eDirections)
+void Vector3::normalize()
 {
-    switch(eDirections)
-    {
-        case X_AXIS:
-            m_x = 1;
-            m_y = m_z = 0;
-            break;
-        case Y_AXIS:
-            m_y = 1;
-            m_x = m_z = 0;
-            break;
-        case Z_AXIS:
-            m_z = 1;
-            m_x = m_y = 0;
-            break;
-        default:
-            m_x = m_y = m_z = 0;
-            break;
-    }
+    double current_length = this->getLength();
+    m_x /= current_length;
+    m_y /= current_length;
+    m_z /= current_length;
 }
 
 Vector3 Vector3::operator+ (const Vector3& rhs)

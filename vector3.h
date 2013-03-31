@@ -10,13 +10,6 @@ class Vector3
 
 public:
 
-    enum Directions
-    {
-        X_AXIS,
-        Y_AXIS,
-        Z_AXIS
-    };
-
     Vector3 (double=0.0, double=0.0, double=0.0);
     Vector3 (const Vector3&);
 
@@ -25,7 +18,7 @@ public:
     Vector3& operator= (const Vector3&);
 
     // make the vector unit(it's length = 1)
-    void normalize(Directions eDirections);
+    void normalize();
 
     double getLength() const;
     double getX() const;

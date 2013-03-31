@@ -17,8 +17,11 @@ int main()
     cout << v2.getX() << v2.getY() << v2.getZ() << endl;
     cout << v2 << endl;
 
-    v2.normalize(Vector3::X_AXIS);
-    cout << v2 << endl;
+    Vector3 v3(100, 30.5, 41.3);
+    cout << v3.getLength() << endl;
+    v3.normalize();
+    cout << v3 << endl;
+    cout << v3.getLength() << endl;
 
     return 0;
 }
